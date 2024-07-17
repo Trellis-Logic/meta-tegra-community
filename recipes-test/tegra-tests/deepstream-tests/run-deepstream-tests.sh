@@ -41,6 +41,15 @@ run_deepstream_test3() {
     deepstream-test3-app file://${STREAMS}/sample_1080p_h264.mp4 file://${STREAMS}/sample_720p.mp4
 }
 
+run_deepstream_nvdsanalytics() {
+    echo "Running deepstream nvdsanalytics test"
+    if [ ! -d "${SAMPLEROOT}/deepstream-nvdsanalytics-test" ]; then
+        return $SKIPCODE
+    fi
+    cd "${SAMPLEROOT}/deepstream-nvdsanalytics-test"
+    deepstream-nvdsanalytics-app file://${STREAMS}/sample_1080p_h264.mp4
+}
+
 run_py_deepstream_test1() {
     echo "Running Python deepstream test1"
     if [ ! -d "${PYSAMPLEROOT}/deepstream-test1" ]; then
@@ -68,8 +77,17 @@ run_py_deepstream_test3() {
     python3 deepstream_test_3.py -i file://${STREAMS}/sample_1080p_h264.mp4 file://${STREAMS}/sample_720p.mp4
 }
 
-TESTS="deepstream_test1 deepstream_test2 deepstream_test3"
-TESTS="$TESTS py_deepstream_test1 py_deepstream_test2 py_deepstream_test3"
+run_py_deepstream_nvdsanalytics_test() {
+    echo "Running Python deepstream nvdsanaltics test"
+    if [ ! -d "${PYSAMPLEROOT}/deepstream-nvdsanalytics" ]; then
+        return $SKIPCODE
+    fi
+    cd "${PYSAMPLEROOT}/deepstream-nvdsanalytics"
+    python3 deepstream_nvdsanalytics.py -i file://${STREAMS}/sample_1080p_h264.mp4
+
+}
+TESTS="deepstream_test1 deepstream_test2 deepstream_test3 deepstream_nvdsanalytics"
+TESTS="$TESTS py_deepstream_test1 py_deepstream_test2 py_deepstream_test3 py_deepstream_nvdsanalytics_test"
 
 find_test() {
     for t in $TESTS; do
