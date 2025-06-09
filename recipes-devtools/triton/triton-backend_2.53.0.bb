@@ -4,11 +4,11 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=124771e398c4a908eba9a40eaa7903e5"
 SECTION = "libs"
 
 SRC_URI = "\
-    git://github.com/triton-inference-server/backend.git;protocol=https;branch=r22.05 \
+    git://github.com/triton-inference-server/backend.git;protocol=https;branch=r24.12 \
     file://0001-Build-fixups.patch \
 "
 
-SRCREV = "aad5e4e02e53a9e1a6b9629739f44f8c5db4d75f"
+SRCREV = "70d71e0d68f7198cffa4e8688d5e2782c07f67a1"
 
 S = "${WORKDIR}/git"
 

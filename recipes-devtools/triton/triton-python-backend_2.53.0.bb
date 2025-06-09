@@ -3,13 +3,14 @@ LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=7889848dc86811b06ded7bfa9ba39e02"
 
 SRC_URI = "\
-    git://github.com/triton-inference-server/python_backend.git;protocol=https;branch=r22.05 \
+    git://github.com/triton-inference-server/python_backend.git;protocol=https;branch=r24.12 \
     file://0001-fix-cmake-build.patch \
 "
 
-SRCREV = "6133572a4f090721cc52e79595b70f383397b186"
+SRCREV = "3916e43d31ee24bd88a4c42901834385db15b7f6"
 
 S = "${WORKDIR}/git"
+B = "${S}"
 
 DEPENDS = " \
     zlib \
@@ -38,9 +39,7 @@ PACKAGECONFIG[gpu] = "-DTRITON_ENABLE_GPU=ON,-DTRITON_ENABLE_GPU=OFF"
 PACKAGECONFIG[stats] = "-DTRITON_ENABLE_STATS=ON,-DTRITON_ENABLE_STATS=OFF"
 PACKAGECONFIG[nvtx] = "-DTRITON_ENABLE_NVTX=ON,-DTRITON_ENABLE_NVTX=OFF"
 
-FILES:${PN} += " \
-    ${libdir}/triton_python_backend_utils.py \
-"
+FILES:${PN} += "${libdir}/python"
 
 SOLIBS = ".so"
 FILES_SOLIBSDEV = ""
