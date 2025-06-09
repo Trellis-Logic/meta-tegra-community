@@ -1,9 +1,9 @@
 From da1d76b8ad6c9b4803c05d94d06f60c9088706c1 Mon Sep 17 00:00:00 2001
 From: Ilies CHERGUI <ilies.chergui@gmail.com>
-Date: Sun, 20 Oct 2024 07:37:52 -0700
-Subject: [PATCH] fix paths to match with OE and getting the right version of
- libraries
+Date: Sat, 26 Aug 2023 12:45:21 +0100
+Subject: [PATCH 2/2] fix paths to match with OE and getting the right version of libraries
 
+Upstream-Status: Pending
 Signed-off-by: Ilies CHERGUI <ilies.chergui@gmail.com>
 Signed-off-by: Matt Madison <matt@madison.systems>
 ---
